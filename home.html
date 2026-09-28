@@ -1,17 +1,37 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+<!-- ==========================================================================
+     NotiRed · Plataforma Web de Noticias
+     Maquetación (mockup) — Entrega 1 · Módulo Front End
+     --------------------------------------------------------------------------
+     Archivo      : home.html
+     Descripción  : Vista de inicio (Home). Estructura de la página en bloques
+                    semánticos: encabezado, sección principal de bienvenida,
+                    noticias destacadas, banda de llamado a la acción,
+                    testimonios y pie de página.
+     Autor        : Hugo Alexis Fonseca Diaz
+     Fecha        : Septiembre de 2026
+     Dependencias : mockup.css (hoja de estilos compartida por las vistas)
+     ========================================================================== -->
 <meta charset="UTF-8">
 <meta name="viewport" content="width=1280">
 <title>Mockup · Home — NotiRed</title>
 <link rel="stylesheet" href="mockup.css">
 </head>
 <body>
+
+<!-- Franja informativa: identifica el prototipo y la vista representada -->
 <div class="flag">NotiRed · Mockup — Entrega 1 · <span>Vista: Home</span></div>
 
 <div class="page">
 
-  <!-- HEADER -->
+  <!-- ======================================================================
+       BLOQUE 1 — ENCABEZADO
+       Logotipo de la marca, menú de navegación de cinco secciones y botón
+       de suscripción. Se repite idéntico en las cuatro vistas; la clase
+       .active indica en qué página se encuentra el usuario.
+       ====================================================================== -->
   <header class="header">
     <div class="logo">
       <div class="logo-mark">N</div>
@@ -27,7 +47,12 @@
     </nav>
   </header>
 
-  <!-- HERO -->
+  <!-- ======================================================================
+       BLOQUE 2 — SECCIÓN PRINCIPAL (HERO)
+       Bienvenida con el mensaje central de la plataforma y los dos llamados
+       a la acción: consultar noticias y escribir a la redacción. El bloque
+       derecho es el marcador de la imagen destacada.
+       ====================================================================== -->
   <section class="hero">
     <div>
       <h1>Enterate primero.<br>Noticias que importan.</h1>
@@ -40,7 +65,13 @@
     <div class="hero-art">Imagen destacada</div>
   </section>
 
-  <!-- DESTACADOS -->
+  <!-- ======================================================================
+       BLOQUE 3 — NOTICIAS DESTACADAS
+       Cuadrícula de cuatro tarjetas. Cada tarjeta es un <article> con imagen,
+       categoría, título, descripción breve y el botón "Ver más", que llevará
+       a la vista de detalle. En la implementación final esta sección se
+       generará dinámicamente a partir del archivo JSON de noticias.
+       ====================================================================== -->
   <section class="section">
     <div class="section-head">
       <div>
@@ -51,6 +82,8 @@
     </div>
 
     <div class="cards">
+
+      <!-- Tarjeta destacada 1 -->
       <article class="card">
         <div class="img-ph">Imagen 1</div>
         <span class="cat">Tecnología</span>
@@ -58,6 +91,8 @@
         <p>Descripción breve de la noticia en una o dos líneas.</p>
         <div class="card-foot"><a href="#" class="btn orange small">Ver más</a></div>
       </article>
+
+      <!-- Tarjeta destacada 2 -->
       <article class="card">
         <div class="img-ph">Imagen 2</div>
         <span class="cat">Educación</span>
@@ -65,6 +100,8 @@
         <p>Descripción breve de la noticia en una o dos líneas.</p>
         <div class="card-foot"><a href="#" class="btn orange small">Ver más</a></div>
       </article>
+
+      <!-- Tarjeta destacada 3 -->
       <article class="card">
         <div class="img-ph">Imagen 3</div>
         <span class="cat">Turismo</span>
@@ -72,6 +109,8 @@
         <p>Descripción breve de la noticia en una o dos líneas.</p>
         <div class="card-foot"><a href="#" class="btn orange small">Ver más</a></div>
       </article>
+
+      <!-- Tarjeta destacada 4 -->
       <article class="card">
         <div class="img-ph">Imagen 4</div>
         <span class="cat">Comercio</span>
@@ -79,10 +118,14 @@
         <p>Descripción breve de la noticia en una o dos líneas.</p>
         <div class="card-foot"><a href="#" class="btn orange small">Ver más</a></div>
       </article>
+
     </div>
   </section>
 
-  <!-- CTA -->
+  <!-- ======================================================================
+       BLOQUE 4 — BANDA CALL-TO-ACTION
+       Franja que invite a recorrer el catálogo completo de noticias.
+       ====================================================================== -->
   <div class="cta-band">
     <div>
       <h3>¿No encuentras lo que buscas?</h3>
@@ -91,7 +134,11 @@
     <a href="#" class="btn big">Explorar</a>
   </div>
 
-  <!-- TESTIMONIOS -->
+  <!-- ======================================================================
+       BLOQUE 5 — TESTIMONIOS
+       Tres opiniones de usuarios que comunican confianza en la plataforma.
+       El círculo muestra las iniciales en lugar de una fotografía.
+       ====================================================================== -->
   <section class="section" style="padding-top:0;">
     <div class="section-head">
       <div>
@@ -100,25 +147,36 @@
       </div>
     </div>
     <div class="testimonials">
+
+      <!-- Testimonio 1 -->
       <div class="testi">
         <div class="avatar">MA</div>
         <p>"Encontré todo lo relacionado con mi carrera en un solo periódico digital."</p>
         <div class="name">María A. · Estudiante</div>
       </div>
+
+      <!-- Testimonio 2 -->
       <div class="testi">
         <div class="avatar">JS</div>
         <p>"Guardo mis noticias favoritas y las reviso cuando quiero. Excelente."</p>
         <div class="name">Jorge S. · Emprendedor</div>
       </div>
+
+      <!-- Testimonio 3 -->
       <div class="testi">
         <div class="avatar">LP</div>
         <p>"La sección de turismo me ayudó a planear mis viajes. Muy útil."</p>
         <div class="name">Lucía P. · Viajera</div>
       </div>
+
     </div>
   </section>
 
-  <!-- FOOTER -->
+  <!-- ======================================================================
+       BLOQUE 6 — PIE DE PÁGINA
+       Información del aplicativo, enlaces de navegación, categorías y datos
+       de contacto, más la barra de copyright.
+       ====================================================================== -->
   <footer class="footer">
     <div class="cols">
       <div>
@@ -146,6 +204,7 @@
 
 </div>
 
+<!-- Anotación del prototipo: inventario de elementos de esta vista -->
 <p class="note" style="width:1280px;margin:10px auto;">
   <b>Elementos:</b> Header con menú de 5 páginas + CTA · Banner de bienvenida · Cards dinámicas con imagen, título, descripción y botón &ldquo;Ver más&rdquo; · Banda Call-to-Action · Sección de testimonios · Footer con información general.
 </p>

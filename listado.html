@@ -1,17 +1,36 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+<!-- ==========================================================================
+     NotiRed · Plataforma Web de Noticias
+     Maquetación (mockup) — Entrega 1 · Módulo Front End
+     --------------------------------------------------------------------------
+     Archivo      : listado.html
+     Descripción  : Vista de catálogo. Muestra las noticias en una rejilla de
+                    tarjetas con filtros por categoría, paginación y una barra
+                    lateral con favoritos, categorías y los accesos de gestión
+                    (crear / editar noticia del mini-CRUD).
+     Autor        : Hugo Alexis Fonseca Diaz
+     Fecha        : Septiembre de 2026
+     Dependencias : mockup.css (hoja de estilos compartida por las vistas)
+     ========================================================================== -->
 <meta charset="UTF-8">
 <meta name="viewport" content="width=1280">
 <title>Mockup · Listado de Noticias — NotiRed</title>
 <link rel="stylesheet" href="mockup.css">
 </head>
 <body>
+
+<!-- Franja informativa: identifica el prototipo y la vista representada -->
 <div class="flag">NotiRed · Mockup — Entrega 1 · <span>Vista: Listado de Noticias</span></div>
 
 <div class="page" style="min-height:760px;">
 
-  <!-- HEADER -->
+  <!-- ======================================================================
+       BLOQUE 1 — ENCABEZADO
+       Igual que en las demás vistas, con .active sobre el enlace "Noticias"
+       para señalar la sección en la que se encuentra el usuario.
+       ====================================================================== -->
   <header class="header">
     <div class="logo">
       <div class="logo-mark">N</div>
@@ -27,9 +46,16 @@
     </nav>
   </header>
 
+  <!-- ======================================================================
+       BLOQUE 2 — DISTRIBUCIÓN EN DOS COLUMNAS
+       La rejilla principal (1fr) contiene filtros, tarjetas y paginación;
+       la barra lateral (300 px) agrupa los módulos de apoyo.
+       ====================================================================== -->
   <div class="list-layout">
 
-    <!-- LISTADO -->
+    <!-- -------------------- COLUMNA PRINCIPAL -------------------- -->
+
+    <!-- Ruta de navegación y título de la sección -->
     <div>
       <div class="breadcrumb">Inicio / Noticias</div>
       <div class="section-head" style="margin-bottom:14px;">
@@ -39,6 +65,8 @@
         </div>
       </div>
 
+      <!-- Filtros por categoría. La clase .on marca el filtro aplicado; en la
+           implementación final cada .chip será un botón que filtrará el JSON. -->
       <div class="filters">
         <span class="chip on">Todas</span>
         <span class="chip">Educación</span>
@@ -48,7 +76,11 @@
         <span class="chip">Favoritos</span>
       </div>
 
+      <!-- Rejilla de dos columnas con las tarjetas de noticias. En la versión
+           final este bloque se generará dinámicamente desde el archivo JSON. -->
       <div class="list-grid">
+
+        <!-- Noticia 1 -->
         <article class="card">
           <div class="img-ph">Imagen</div>
           <span class="cat">Tecnología</span>
@@ -56,6 +88,8 @@
           <p>Descripción breve de la noticia en una o dos líneas.</p>
           <div class="card-foot"><a href="#" class="btn orange small">Ver más</a></div>
         </article>
+
+        <!-- Noticia 2 -->
         <article class="card">
           <div class="img-ph">Imagen</div>
           <span class="cat">Educación</span>
@@ -63,6 +97,8 @@
           <p>Descripción breve de la noticia en una o dos líneas.</p>
           <div class="card-foot"><a href="#" class="btn orange small">Ver más</a></div>
         </article>
+
+        <!-- Noticia 3 -->
         <article class="card">
           <div class="img-ph">Imagen</div>
           <span class="cat">Turismo</span>
@@ -70,6 +106,8 @@
           <p>Descripción breve de la noticia en una o dos líneas.</p>
           <div class="card-foot"><a href="#" class="btn orange small">Ver más</a></div>
         </article>
+
+        <!-- Noticia 4 -->
         <article class="card">
           <div class="img-ph">Imagen</div>
           <span class="cat">Comercio</span>
@@ -77,6 +115,8 @@
           <p>Descripción breve de la noticia en una o dos líneas.</p>
           <div class="card-foot"><a href="#" class="btn orange small">Ver más</a></div>
         </article>
+
+        <!-- Noticia 5 -->
         <article class="card">
           <div class="img-ph">Imagen</div>
           <span class="cat">Tecnología</span>
@@ -84,6 +124,8 @@
           <p>Descripción breve de la noticia en una o dos líneas.</p>
           <div class="card-foot"><a href="#" class="btn orange small">Ver más</a></div>
         </article>
+
+        <!-- Noticia 6 -->
         <article class="card">
           <div class="img-ph">Imagen</div>
           <span class="cat">Educación</span>
@@ -91,8 +133,10 @@
           <p>Descripción breve de la noticia en una o dos líneas.</p>
           <div class="card-foot"><a href="#" class="btn orange small">Ver más</a></div>
         </article>
+
       </div>
 
+      <!-- Paginación: .p.on señala la página visible -->
       <div class="pagination">
         <span class="p">&lt;</span>
         <span class="p on">1</span>
@@ -103,8 +147,11 @@
       </div>
     </div>
 
-    <!-- SIDEBAR -->
+    <!-- -------------------- BARRA LATERAL -------------------- -->
+
     <aside class="sidebar">
+
+      <!-- Módulo de favoritos: se alimentará del localStorage del usuario -->
       <div>
         <h4>Favoritos</h4>
         <ul>
@@ -113,6 +160,8 @@
         </ul>
         <p class="hint" style="margin-top:8px;">Guardada en localStorage.</p>
       </div>
+
+      <!-- Módulo de categorías con el número de noticias de cada una -->
       <div>
         <h4>Categorías</h4>
         <ul>
@@ -122,6 +171,8 @@
           <li>Comercio <b>6</b></li>
         </ul>
       </div>
+
+      <!-- Accesos de gestión del mini-CRUD (crear / editar noticia) -->
       <div>
         <h4>Nuevas noticias</h4>
         <ul>
@@ -129,11 +180,15 @@
           <li>+ Editar noticia (Admin)</li>
         </ul>
       </div>
+
     </aside>
 
   </div>
 
-  <!-- FOOTER -->
+  <!-- ======================================================================
+       BLOQUE 3 — PIE DE PÁGINA
+       Componente común a las cuatro vistas del aplicativo.
+       ====================================================================== -->
   <footer class="footer" style="margin-top:10px;">
     <div class="cols">
       <div>
@@ -161,6 +216,7 @@
 
 </div>
 
+<!-- Anotación del prototipo: inventario de elementos de esta vista -->
 <p class="note" style="width:1280px;margin:10px auto;">
   <b>Elementos:</b> Listado dinámico en cards (imagen, nombre, descripción breve, botón &ldquo;Ver más&rdquo;) · Filtros por categoría · Paginación · Barra lateral con favoritos, categorías y accesos del mini-CRUD (crear/eliminar) · Footer.
 </p>

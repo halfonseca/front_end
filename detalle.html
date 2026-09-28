@@ -1,17 +1,36 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+<!-- ==========================================================================
+     NotiRed · Plataforma Web de Noticias
+     Maquetación (mockup) — Entrega 1 · Módulo Front End
+     --------------------------------------------------------------------------
+     Archivo      : detalle.html
+     Descripción  : Vista de detalle de una noticia. Presenta el contenido
+                    completo en una columna de lectura, con metadatos del
+                    autor, imagen representativa, botones de interacción
+                    (favoritos y contacto) y noticias relacionadas.
+     Autor        : Hugo Alexis Fonseca Diaz
+     Fecha        : Septiembre de 2026
+     Dependencias : mockup.css (hoja de estilos compartida por las vistas)
+     ========================================================================== -->
 <meta charset="UTF-8">
 <meta name="viewport" content="width=1280">
 <title>Mockup · Detalle de Noticia — NotiRed</title>
 <link rel="stylesheet" href="mockup.css">
 </head>
 <body>
+
+<!-- Franja informativa: identifica el prototipo y la vista representada -->
 <div class="flag">NotiRed · Mockup — Entrega 1 · <span>Vista: Detalle de Noticia</span></div>
 
 <div class="page" style="min-height:760px;">
 
-  <!-- HEADER -->
+  <!-- ======================================================================
+       BLOQUE 1 — ENCABEZADO
+       Se mantiene el enlace "Noticias" activo, ya que el detalle pertenece
+       al catálogo y se consulta desde esa sección.
+       ====================================================================== -->
   <header class="header">
     <div class="logo">
       <div class="logo-mark">N</div>
@@ -27,16 +46,28 @@
     </nav>
   </header>
 
+  <!-- ======================================================================
+       BLOQUE 2 — ARTÍCULO
+       Columna de lectura de 860 px. El texto es de relleno: en la versión
+       final estos párrafos se tomarán del campo "descripcion" del objeto de
+       la noticia dentro del archivo JSON.
+       ====================================================================== -->
   <article class="article">
+
+    <!-- Ruta de navegación, categoría y título -->
     <div class="breadcrumb">Inicio / Noticias / <b>Detalle</b></div>
     <span class="cat" style="background:#1d4ed8;">Tecnología</span>
     <h1>Título completo de la noticia seleccionada</h1>
+
+    <!-- Metadatos: autor, fecha de publicación y tiempo de lectura -->
     <div class="meta">
       Autor: <b>Redacción NotiRed</b> · Fecha: <b>15 de agosto de 2026</b> · Tiempo de lectura: <b>4 min</b>
     </div>
 
+    <!-- Marcador de la imagen representativa -->
     <div class="hero-img">Imagen representativa de la noticia</div>
 
+    <!-- Cuerpo del artículo (texto de relleno) -->
     <p class="body">
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Sed vitae justo
       sed lectus tincidunt tincidunt. Integer dapibus erat vitae mi pulvinar, at commodo nisi
@@ -52,14 +83,21 @@
       sed sollicitudin leo faucibus non. Quisque id justo vitae sapien volutpat ultricies.
     </p>
 
+    <!-- Botones de interacción: guardar en favoritos y contactar al autor -->
     <div class="actions">
       <a href="#" class="btn orange big">★ Agregar a favoritos</a>
       <a href="#" class="btn big" style="background:var(--blue);">Contactar autor</a>
     </div>
 
+    <!-- Anotación del prototipo: comportamiento previsto de los botones -->
     <p class="note"><b>Interacción:</b> el botón &ldquo;Agregar a favoritos&rdquo; guarda la noticia en <b>localStorage</b> y el botón &ldquo;Contactar autor&rdquo; redirige al formulario de contacto.</p>
   </article>
 
+  <!-- ======================================================================
+       BLOQUE 3 — NOTICIAS RELACIONADAS
+       Tres tarjetas que reutilizan el componente .card con una rejilla de
+       tres columnas, para sugerir contenido afín al artículo abierto.
+       ====================================================================== -->
   <section class="section" style="padding-top:10px;">
     <div class="section-head">
       <div>
@@ -68,25 +106,35 @@
       </div>
     </div>
     <div class="cards" style="grid-template-columns:repeat(3,1fr);">
+
+      <!-- Noticia relacionada 1 -->
       <article class="card">
         <div class="img-ph">Imagen</div>
         <h3 style="padding-top:12px;">Otra noticia relacionada</h3>
         <div class="card-foot"><a href="#" class="btn orange small">Ver más</a></div>
       </article>
+
+      <!-- Noticia relacionada 2 -->
       <article class="card">
         <div class="img-ph">Imagen</div>
         <h3 style="padding-top:12px;">Otra noticia relacionada</h3>
         <div class="card-foot"><a href="#" class="btn orange small">Ver más</a></div>
       </article>
+
+      <!-- Noticia relacionada 3 -->
       <article class="card">
         <div class="img-ph">Imagen</div>
         <h3 style="padding-top:12px;">Otra noticia relacionada</h3>
         <div class="card-foot"><a href="#" class="btn orange small">Ver más</a></div>
       </article>
+
     </div>
   </section>
 
-  <!-- FOOTER -->
+  <!-- ======================================================================
+       BLOQUE 4 — PIE DE PÁGINA
+       Componente común a las cuatro vistas del aplicativo.
+       ====================================================================== -->
   <footer class="footer">
     <div class="cols">
       <div>
@@ -114,6 +162,7 @@
 
 </div>
 
+<!-- Anotación del prototipo: inventario de elementos de esta vista -->
 <p class="note" style="width:1280px;margin:10px auto;">
   <b>Elementos:</b> Información completa de la noticia · Imagen representativa · Información del autor · Botones de interacción (favoritos / contacto) · Noticias relacionadas · Footer.
 </p>

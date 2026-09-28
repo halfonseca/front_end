@@ -1,17 +1,34 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+<!-- ==========================================================================
+     NotiRed · Plataforma Web de Noticias
+     Maquetación (mockup) — Entrega 1 · Módulo Front End
+     --------------------------------------------------------------------------
+     Archivo      : contacto.html
+     Descripción  : Vista de contacto. Contiene el formulario de mensaje con
+                    validaciones básicas y, en la columna derecha, los datos
+                    de contacto de la redacción y un marcador de ubicación.
+     Autor        : Hugo Alexis Fonseca Diaz
+     Fecha        : Septiembre de 2026
+     Dependencias : mockup.css (hoja de estilos compartida por las vistas)
+     ========================================================================== -->
 <meta charset="UTF-8">
 <meta name="viewport" content="width=1280">
 <title>Mockup · Contacto — NotiRed</title>
 <link rel="stylesheet" href="mockup.css">
 </head>
 <body>
+
+<!-- Franja informativa: identifica el prototipo y la vista representada -->
 <div class="flag">NotiRed · Mockup — Entrega 1 · <span>Vista: Contacto</span></div>
 
 <div class="page" style="min-height:760px;">
 
-  <!-- HEADER -->
+  <!-- ======================================================================
+       BLOQUE 1 — ENCABEZADO
+       Igual que en las demás vistas, con .active sobre el enlace "Contacto".
+       ====================================================================== -->
   <header class="header">
     <div class="logo">
       <div class="logo-mark">N</div>
@@ -27,9 +44,15 @@
     </nav>
   </header>
 
+  <!-- ======================================================================
+       BLOQUE 2 — DISTRIBUCIÓN EN DOS COLUMNAS
+       Columna izquierda (1.4fr) con el formulario y columna derecha (1fr) con
+       la información de contacto. El padding superior de la barra lateral
+       la alinea con el inicio del formulario.
+       ====================================================================== -->
   <div class="contact-layout">
 
-    <!-- FORMULARIO -->
+    <!-- -------------------- FORMULARIO -------------------- -->
     <div>
       <div class="breadcrumb">Inicio / Contacto</div>
       <div class="section-head" style="margin-bottom:14px;">
@@ -39,35 +62,51 @@
         </div>
       </div>
 
+      <!-- Formulario de mensaje. En la implementación final se añadirán los
+           atributos required y type="email" para aplicar la validación del
+           navegador, además del mensaje de confirmación tras el envío. -->
       <form>
+
+        <!-- Campo 1: nombre (obligatorio) -->
         <div class="field">
           <label>Nombre completo <span class="req">*</span></label>
           <input type="text" placeholder="Ej.: Ana García">
           <p class="hint">Campo obligatorio.</p>
         </div>
+
+        <!-- Campo 2: correo electrónico (obligatorio, con validación de formato) -->
         <div class="field">
           <label>Correo electrónico <span class="req">*</span></label>
           <input type="email" placeholder="Ej.: ana@correo.com">
           <p class="hint">Debe ser un correo válido, p. ej. nombre@dominio.com.</p>
         </div>
+
+        <!-- Campo 3: asunto (obligatorio) -->
         <div class="field">
           <label>Asunto <span class="req">*</span></label>
           <input type="text" placeholder="Motivo del mensaje">
         </div>
+
+        <!-- Campo 4: mensaje (obligatorio) -->
         <div class="field">
           <label>Mensaje <span class="req">*</span></label>
           <textarea placeholder="Escribe tu mensaje..."></textarea>
         </div>
+
+        <!-- Acción de envío -->
         <div class="actions" style="margin-top:0;">
           <button type="submit" class="btn orange big">Enviar mensaje</button>
         </div>
       </form>
 
+      <!-- Anotación del prototipo: reglas de validación previstas -->
       <p class="note"><b>Validaciones:</b> campos obligatorios marcados con <span class="req">*</span>, formato de correo verificado y mensaje de confirmación al enviar.</p>
     </div>
 
-    <!-- INFO -->
+    <!-- -------------------- INFORMACIÓN DE CONTACTO -------------------- -->
     <aside class="sidebar" style="padding-top:76px;">
+
+      <!-- Datos de la redacción: correo, teléfono, dirección y horario -->
       <div>
         <h4>Información de contacto</h4>
         <div class="info-box">
@@ -87,15 +126,21 @@
           <div><b>Horario</b><p>Lun–Vie 8:00 a 18:00</p></div>
         </div>
       </div>
+
+      <!-- Marcador de la ubicación; se sustituirá por un mapa embebido -->
       <div>
         <h4>Donde encontrarnos</h4>
         <div style="height:140px;border-radius:8px;background:#dbeafe;display:flex;align-items:center;justify-content:center;color:#1d4ed8;font-size:12px;font-weight:700;text-transform:uppercase;">Mapa / ubicación</div>
       </div>
+
     </aside>
 
   </div>
 
-  <!-- FOOTER -->
+  <!-- ======================================================================
+       BLOQUE 3 — PIE DE PÁGINA
+       Componente común a las cuatro vistas del aplicativo.
+       ====================================================================== -->
   <footer class="footer">
     <div class="cols">
       <div>
@@ -123,6 +168,7 @@
 
 </div>
 
+<!-- Anotación del prototipo: inventario de elementos de esta vista -->
 <p class="note" style="width:1280px;margin:10px auto;">
   <b>Elementos:</b> Formulario con nombre, correo, asunto y mensaje · Validaciones básicas (obligatorios y correo válido) · Botón de envío con mensaje de confirmación · Información de contacto y ubicación · Footer.
 </p>

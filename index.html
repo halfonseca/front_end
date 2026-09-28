@@ -1,72 +1,113 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+<!-- ==========================================================================
+     NotiRed · Plataforma Web de Noticias
+     Maquetación (mockup) — Entrega 1 · Módulo Front End
+     --------------------------------------------------------------------------
+     Archivo      : index.html
+     Descripción  : Portada del prototipo. Presenta las cuatro vistas del
+                    mockup en una cuadrícula de tarjetas y permite navegar a
+                    cada una de ellas. Funciona como índice del entregable.
+     Autor        : Hugo Alexis Fonseca Diaz
+     Fecha        : Septiembre de 2026
+     Dependencias : Ninguna externa; los estilos propios van embebidos porque
+                    este índice no comparte la hoja mockup.css.
+     ========================================================================== -->
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Mockups · NotiRed — Entrega 1</title>
+
 <style>
+  /* --- 1. Reinicio y cuerpo ------------------------------------------- */
   * { box-sizing: border-box; margin: 0; padding: 0; }
   body {
     font-family: "Liberation Sans", Arial, Helvetica, sans-serif;
     background: #f8fafc; color: #0f172a;
     padding: 60px 30px;
   }
+
+  /* --- 2. Contenedor y títulos ---------------------------------------- */
   .wrap { max-width: 960px; margin: 0 auto; }
   h1 { font-size: 34px; margin-bottom: 6px; }
   h1 em { color: #1d4ed8; font-style: normal; }
   .sub { color: #64748b; margin-bottom: 30px; }
+
+  /* --- 3. Cuadrícula de vistas ---------------------------------------- */
   .grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 22px; }
   .card {
     background: #fff; border: 1px solid #e2e8f0; border-radius: 12px;
     padding: 24px; text-decoration: none; color: inherit;
     transition: .2s; box-shadow: 0 4px 14px rgba(15,23,42,.06);
   }
+  /* Efecto de elevación al pasar el cursor sobre la tarjeta */
   .card:hover { transform: translateY(-3px); border-color: #1d4ed8; }
   .card .num { font-size: 12px; font-weight: 800; color: #f97316; text-transform: uppercase; letter-spacing: 1px; }
   .card h3 { font-size: 19px; margin: 8px 0 6px; }
   .card p { font-size: 13px; color: #64748b; }
+
+  /* Miniatura que representa cada vista dentro de la tarjeta */
   .thumb {
     height: 130px; border-radius: 8px; margin: 14px 0;
     background: #eff6ff repeating-linear-gradient(45deg, rgba(29,78,216,.05) 0 12px, transparent 12px 24px);
     display: flex; align-items: center; justify-content: center;
     color: #1d4ed8; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px;
   }
+
+  /* --- 4. Nota informativa del pie ----------------------------------- */
   .note { margin-top: 30px; font-size: 13px; color: #64748b; background: #fffbeb; border: 1px dashed #f97316; padding: 12px 16px; border-radius: 8px; }
 </style>
 </head>
 <body>
+
 <div class="wrap">
+
+  <!-- Encabezado del índice -->
   <h1>Noti<em>Red</em> — Mockups</h1>
   <p class="sub">Maquetación de la Plataforma Web de Noticias · Entrega 1 · Módulo Front End</p>
 
+  <!-- Cuadrícula con las cuatro vistas. Cada tarjeta es un enlace al archivo
+       HTML correspondiente; la miniatura es un marcador de posición. -->
   <div class="grid">
+
+    <!-- Vista 1: página de inicio -->
     <a class="card" href="home.html">
       <div class="num">Vista 1</div>
       <h3>Home</h3>
       <p>Header con menú, bienvenida, noticias destacadas, CTA, testimonios y footer.</p>
       <div class="thumb">Vista Home</div>
     </a>
+
+    <!-- Vista 2: catálogo de noticias -->
     <a class="card" href="listado.html">
       <div class="num">Vista 2</div>
       <h3>Listado de Noticias</h3>
       <p>Tarjetas dinámicas, filtros por categoría, paginación y barra lateral.</p>
       <div class="thumb">Vista Listado</div>
     </a>
+
+    <!-- Vista 3: detalle de la noticia -->
     <a class="card" href="detalle.html">
       <div class="num">Vista 3</div>
       <h3>Detalle de Noticia</h3>
       <p>Información completa, imagen, autor y botones de favoritos / contacto.</p>
       <div class="thumb">Vista Detalle</div>
     </a>
+
+    <!-- Vista 4: formulario de contacto -->
     <a class="card" href="contacto.html">
       <div class="num">Vista 4</div>
       <h3>Contacto</h3>
       <p>Formulario con validaciones, mensaje de confirmación e información de contacto.</p>
       <div class="thumb">Vista Contacto</div>
     </a>
+
   </div>
 
+  <!-- Indicaciones de visualización -->
   <p class="note">Abre cada tarjeta para ver el mockup correspondiente. Se recomienda visualizarlos en un navegador web a 1280&nbsp;px de ancho.</p>
+
 </div>
+
 </body>
 </html>

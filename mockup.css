@@ -1,16 +1,50 @@
+/* ==========================================================================
+   NotiRed · Plataforma Web de Noticias
+   Maquetación (mockup) — Entrega 1 · Módulo Front End
+   --------------------------------------------------------------------------
+   Archivo  : mockup.css
+   Descripción: Hoja de estilos compartida por las cuatro vistas del mockup
+                (Home, Listado, Detalle y Contacto). Centraliza el sistema de
+                diseño —variables, tipografía, botones y componentes— para que
+                todas las vistas sean visualmente consistentes.
+   Autor    : Hugo Alexis Fonseca Diaz
+   Fecha    : Septiembre de 2026
+   Nota     : Los bloques de imágenes usan tramas diagonales y el texto
+              "Imagen N" en lugar de archivos reales, ya que en esta etapa de
+              maquetación aún no se incorporan fotografías definitivas.
+   ========================================================================== */
+
+
+/* ==========================================================================
+   1. VARIABLES CSS (custom properties)
+   --------------------------------------------------------------------------
+   Se definen en :root para poder reutilizar los mismos valores en todo el
+   documento. Cambiar un color o un radio aquí se refleja en las cuatro vistas
+   sin necesidad de editar cada regla.
+   ========================================================================== */
 :root {
-  --blue: #1d4ed8;
-  --blue-dark: #1e3a8a;
-  --blue-soft: #eff6ff;
-  --orange: #f97316;
-  --ink: #0f172a;
-  --gray: #64748b;
-  --gray-soft: #e2e8f0;
+  /* Paleta de color de la identidad visual de NotiRed */
+  --blue: #1d4ed8;         /* Azul principal: enlaces, títulos y acciones      */
+  --blue-dark: #1e3a8a;    /* Azul oscuro: fondo del encabezado y del hero     */
+  --blue-soft: #eff6ff;    /* Azul muy claro: fondos de tarjetas y placeholders*/
+  --orange: #f97316;       /* Naranja de acento: categorías y llamados        */
+  --ink: #0f172a;          /* Negro azulado: color principal del texto         */
+  --gray: #64748b;         /* Gris medio: texto secundario y descripciones    */
+  --gray-soft: #e2e8f0;    /* Gris claro: bordes y separadores                 */
   --white: #ffffff;
-  --radius: 10px;
-  --shadow: 0 4px 14px rgba(15, 23, 42, 0.08);
+
+  /* Tokens de forma */
+  --radius: 10px;                               /* Radio de esquinas        */
+  --shadow: 0 4px 14px rgba(15, 23, 42, 0.08); /* Sombra suave de tarjetas */
 }
 
+
+/* ==========================================================================
+   2. BASE
+   --------------------------------------------------------------------------
+   Reinicio mínimo y estilos del cuerpo del documento. Se usa box-sizing
+   border-box para que el ancho y el alto incluyan el borde y el padding.
+   ========================================================================== */
 * { box-sizing: border-box; margin: 0; padding: 0; }
 
 body {
@@ -19,6 +53,8 @@ body {
   background: #f8fafc;
 }
 
+/* Contenedor principal: fija 1280 px de ancho para que todas las vistas
+   conserven la misma medida de referencia usada en las figuras del documento. */
 .page {
   width: 1280px;
   min-height: 820px;
@@ -27,7 +63,13 @@ body {
   box-shadow: var(--shadow);
 }
 
-/* ---------- BANDERA DE MOCKUP ---------- */
+
+/* ==========================================================================
+   3. BANDERA DE MOCKUP
+   --------------------------------------------------------------------------
+   Franja superior informativa que indica que se trata de un prototipo
+   funcional y no del aplicativo final. No forma parte del diseño de NotiRed.
+   ========================================================================== */
 .flag {
   background: var(--blue-dark);
   color: #fff;
@@ -38,9 +80,15 @@ body {
   text-transform: uppercase;
   font-weight: bold;
 }
-.flag span { color: #fcd34d; }
+.flag span { color: #fcd34d; }  /* Resalta el nombre de la vista */
 
-/* ---------- HEADER / NAV ---------- */
+
+/* ==========================================================================
+   4. ENCABEZADO Y MENÚ DE NAVEGACIÓN
+   --------------------------------------------------------------------------
+   Componente compartido por las cuatro vistas. La clase .active marca la
+   sección actual y el .badge muestra el contador de favoritos.
+   ========================================================================== */
 .header {
   display: flex;
   align-items: center;
@@ -48,6 +96,8 @@ body {
   padding: 14px 40px;
   border-bottom: 1px solid var(--gray-soft);
 }
+
+/* Logotipo: cuadrado con la inicial + nombre de la marca */
 .logo { display: flex; align-items: center; gap: 10px; }
 .logo-mark {
   width: 38px; height: 38px;
@@ -60,18 +110,21 @@ body {
 .logo-name { font-size: 22px; font-weight: 800; color: var(--ink); }
 .logo-name em { color: var(--blue); font-style: normal; }
 
+/* Menú: cinco enlaces de navegación + botón de suscripción */
 .nav { display: flex; gap: 30px; align-items: center; }
 .nav a {
   text-decoration: none; color: var(--gray);
   font-size: 15px; font-weight: 600;
 }
-.nav a.active { color: var(--blue); }
+.nav a.active { color: var(--blue); }          /* Enlace de la vista actual */
 .nav a .badge {
   background: var(--orange); color: #fff;
   border-radius: 999px;
   font-size: 11px; padding: 1px 7px;
   margin-left: 4px;
 }
+
+/* Botones: variante base y modificadores de color y tamaño */
 .btn {
   display: inline-block;
   background: var(--blue); color: #fff;
@@ -79,11 +132,14 @@ body {
   font-weight: 700; font-size: 14px;
   text-decoration: none;
 }
-.btn.orange { background: var(--orange); }
-.btn.ghost { background: #fff; color: var(--blue); border: 2px solid var(--blue); }
+.btn.orange { background: var(--orange); }                            /* Primario */
+.btn.ghost { background: #fff; color: var(--blue); border: 2px solid var(--blue); } /* Secundario */
 .btn.big { padding: 13px 26px; font-size: 16px; }
 
-/* ---------- HERO ---------- */
+
+/* ==========================================================================
+   5. SECCIÓN HERO (portada de la vista Home)
+   ========================================================================== */
 .hero {
   background: linear-gradient(135deg, var(--blue-dark), var(--blue));
   color: #fff;
@@ -93,6 +149,8 @@ body {
 .hero h1 { font-size: 40px; line-height: 1.15; margin-bottom: 14px; }
 .hero p { font-size: 17px; opacity: .92; max-width: 560px; margin-bottom: 24px; }
 .hero .ctas { display: flex; gap: 14px; }
+
+/* Marcador de la imagen destacada del hero */
 .hero-art {
   width: 340px; height: 220px;
   border-radius: var(--radius);
@@ -102,28 +160,44 @@ body {
   font-weight: bold; letter-spacing: 1px; text-transform: uppercase; font-size: 13px;
 }
 
-/* ---------- SECCIONES ---------- */
+
+/* ==========================================================================
+   6. SECCIONES Y ENCABEZADOS INTERNOS
+   ========================================================================== */
 .section { padding: 46px 40px 20px; }
 .section-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 22px; }
 .section-head h2 { font-size: 26px; color: var(--ink); }
-.section-head h2 .accent { color: var(--orange); }
+.section-head h2 .accent { color: var(--orange); }  /* Resalta la palabra clave */
+
+/* Texto superior de las secciones ("Lo más leído", "Catálogo", etc.) */
 .kicker {
   text-transform: uppercase; color: var(--blue);
   font-weight: 700; letter-spacing: 1.5px; font-size: 12px;
 }
 
-/* ---------- CARDS ---------- */
+
+/* ==========================================================================
+   7. TARJETAS DE NOTICIAS (cards)
+   --------------------------------------------------------------------------
+   Componente reutilizado en la vista Home, en el listado y en las noticias
+   relacionadas del detalle. Cada tarjeta tiene: imagen, categoría, título,
+   descripción breve y botón "Ver más".
+   ========================================================================== */
 .cards { display: grid; grid-template-columns: repeat(4, 1fr); gap: 22px; }
 .card {
   border: 1px solid var(--gray-soft); border-radius: var(--radius);
   overflow: hidden; background: #fff; box-shadow: var(--shadow);
 }
+
+/* Marcador de la imagen de la tarjeta */
 .card .img-ph {
   height: 150px;
   background: var(--blue-soft) repeating-linear-gradient(45deg, rgba(29,78,216,.05) 0 12px, transparent 12px 24px);
   display: flex; align-items: center; justify-content: center;
   color: var(--blue); font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px;
 }
+
+/* Etiqueta de categoría */
 .card .cat {
   position: relative; top: 0;
   font-size: 11px; font-weight: 700; text-transform: uppercase;
@@ -136,7 +210,10 @@ body {
 .card .card-foot { padding: 12px 16px 16px; }
 .card .btn.small { padding: 7px 14px; font-size: 13px; }
 
-/* ---------- CTA BAND ---------- */
+
+/* ==========================================================================
+   8. BANDA CALL-TO-ACTION
+   ========================================================================== */
 .cta-band {
   background: var(--blue-soft); margin: 40px;
   border-radius: var(--radius);
@@ -146,12 +223,16 @@ body {
 .cta-band h3 { font-size: 24px; margin-bottom: 6px; }
 .cta-band p { color: var(--gray); }
 
-/* ---------- TESTIMONIOS ---------- */
+
+/* ==========================================================================
+   9. TESTIMONIOS
+   ========================================================================== */
 .testimonials { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
 .testi {
   border: 1px solid var(--gray-soft); border-radius: var(--radius);
   padding: 20px; background: #fff;
 }
+/* Iniciales del usuario en lugar de fotografía */
 .testi .avatar {
   width: 44px; height: 44px; border-radius: 50%;
   background: var(--blue-soft); color: var(--blue);
@@ -161,7 +242,13 @@ body {
 .testi p { font-size: 14px; color: var(--gray); font-style: italic; }
 .testi .name { font-weight: 700; margin-top: 10px; font-size: 13px; }
 
-/* ---------- FOOTER ---------- */
+
+/* ==========================================================================
+   10. PIE DE PÁGINA
+   --------------------------------------------------------------------------
+   Componente común a las cuatro vistas: descripción, navegación, categorías,
+   datos de contacto y barra de copyright.
+   ========================================================================== */
 .footer { background: var(--ink); color: #cbd5e1; padding: 36px 40px; font-size: 13px; }
 .footer .cols { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 30px; margin-bottom: 24px; }
 .footer h4 { color: #fff; font-size: 14px; margin-bottom: 10px; }
@@ -169,16 +256,28 @@ body {
 .footer li { margin-bottom: 6px; }
 .footer-bottom { border-top: 1px solid #334155; padding-top: 14px; display: flex; justify-content: space-between; color: #94a3b8; }
 
-/* ---------- LISTADO ---------- */
+
+/* ==========================================================================
+   11. VISTA DE LISTADO DE NOTICIAS
+   --------------------------------------------------------------------------
+   Distribución de dos columnas: rejilla de noticias (1fr) + barra lateral
+   fija de 300 px con favoritos, categorías y accesos del mini-CRUD.
+   ========================================================================== */
 .list-layout { display: grid; grid-template-columns: 1fr 300px; gap: 30px; padding: 30px 40px; }
 .breadcrumb { font-size: 13px; color: var(--gray); margin-bottom: 14px; }
+
+/* Filtros por categoría */
 .filters { display: flex; gap: 10px; margin-bottom: 20px; flex-wrap: wrap; }
 .chip {
   border: 1px solid var(--gray-soft); background: #fff; color: var(--gray);
   padding: 7px 16px; border-radius: 999px; font-size: 13px; cursor: pointer;
 }
-.chip.on { background: var(--blue); border-color: var(--blue); color: #fff; }
+.chip.on { background: var(--blue); border-color: var(--blue); color: #fff; }  /* Filtro activo */
+
+/* Rejilla de dos columnas para las tarjetas del listado */
 .list-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 22px; }
+
+/* Barra lateral */
 .sidebar > div {
   border: 1px solid var(--gray-soft); border-radius: var(--radius);
   padding: 18px; background: #fff; margin-bottom: 18px;
@@ -187,19 +286,29 @@ body {
 .sidebar ul { list-style: none; font-size: 13px; }
 .sidebar li { padding: 6px 0; border-bottom: 1px dashed var(--gray-soft); }
 .sidebar li b { color: var(--blue); }
+
+/* Paginación */
 .pagination { display: flex; gap: 8px; justify-content: center; margin-top: 26px; }
 .pagination .p {
   width: 34px; height: 34px; border-radius: 8px;
   border: 1px solid var(--gray-soft); background: #fff;
   display: flex; align-items: center; justify-content: center; font-size: 13px;
 }
-.pagination .p.on { background: var(--blue); color: #fff; border-color: var(--blue); }
+.pagination .p.on { background: var(--blue); color: #fff; border-color: var(--blue); }  /* Página actual */
 
-/* ---------- DETALLE ---------- */
+
+/* ==========================================================================
+   12. VISTA DE DETALLE DE NOTICIA
+   --------------------------------------------------------------------------
+   Columna de lectura centrada (860 px) con metadatos, imagen representativa,
+   cuerpo del artículo y botones de interacción.
+   ========================================================================== */
 .article { max-width: 860px; margin: 0 auto; padding: 30px 40px; }
 .article h1 { font-size: 34px; line-height: 1.2; margin: 12px 0; }
 .meta { color: var(--gray); font-size: 13px; margin-bottom: 20px; }
 .meta b { color: var(--ink); }
+
+/* Marcador de la imagen principal del artículo */
 .hero-img {
   height: 320px; border-radius: var(--radius);
   background: var(--blue-soft) repeating-linear-gradient(45deg, rgba(29,78,216,.05) 0 12px, transparent 12px 24px);
@@ -208,18 +317,32 @@ body {
   margin-bottom: 20px;
 }
 .article p.body { color: #334155; font-size: 15px; line-height: 1.7; margin-bottom: 14px; }
+
+/* Botones de interacción: favoritos y contacto con el autor */
 .actions { display: flex; gap: 12px; margin: 22px 0; }
-/* ---------- CONTACTO ---------- */
+
+
+/* ==========================================================================
+   13. VISTA DE CONTACTO
+   --------------------------------------------------------------------------
+   Formulario a la izquierda (1.4fr) e información de contacto a la derecha.
+   ========================================================================== */
 .contact-layout { display: grid; grid-template-columns: 1.4fr 1fr; gap: 34px; padding: 34px 40px; }
+
+/* Campos del formulario */
 form .field { margin-bottom: 16px; }
 form label { font-weight: 600; font-size: 13px; display: block; margin-bottom: 6px; }
-form label .req { color: var(--orange); }
+form label .req { color: var(--orange); }  /* Asterisco de campo obligatorio */
 form input, form textarea {
   width: 100%; border: 1px solid var(--gray-soft); border-radius: 8px;
   padding: 11px 14px; font-size: 14px; font-family: inherit; background: #fff;
 }
 form textarea { min-height: 110px; }
+
+/* Texto de ayuda bajo cada campo */
 .hint { font-size: 11px; color: var(--gray); margin-top: 4px; }
+
+/* Cajas de información de contacto (correo, teléfono, dirección, horario) */
 .info-box { display: flex; gap: 14px; margin-bottom: 16px; align-items: flex-start; }
 .info-box .ic {
   width: 40px; height: 40px; border-radius: 8px; flex: 0 0 auto;
@@ -229,7 +352,14 @@ form textarea { min-height: 110px; }
 .info-box b { font-size: 14px; display: block; }
 .info-box p { font-size: 13px; color: var(--gray); }
 
-/* ---------- ANOTACIONES MOCKUP ---------- */
+
+/* ==========================================================================
+   14. ANOTACIONES DEL MOCKUP
+   --------------------------------------------------------------------------
+   Cajas de texto que explican los elementos de cada vista. Aparecen debajo
+   de la bandera superior y dentro del contenido; son documentación del
+   prototipo y se eliminarán en la implementación final.
+   ========================================================================== */
 .note {
   background: #fffbeb; border: 1px dashed var(--orange);
   color: #9a3412; font-size: 12px;
