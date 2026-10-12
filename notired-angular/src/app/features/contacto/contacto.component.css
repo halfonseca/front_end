@@ -1,0 +1,48 @@
+.flag {
+  background: var(--blue-dark);
+  color: #fff;
+  font-size: 12px;
+  letter-spacing: 1px;
+  padding: 6px 0;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+.flag span { color: #fcd34d; }
+
+.contact-layout {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 34px;
+  padding: 34px 40px;
+}
+
+.info-box {
+  display: flex;
+  gap: 14px;
+  margin-bottom: 16px;
+  align-items: flex-start;
+}
+
+.info-box .ic {
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  flex: 0 0 auto;
+  background: var(--blue-soft);
+  color: var(--blue);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+}
+
+.info-box b {
+  font-size: 14px;
+  display: block;
+}
+
+.info-box p {
+  font-size: 13px;
+  color: var(--gray);
+}

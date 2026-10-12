@@ -1,0 +1,38 @@
+<div class="flag">NotiRed · Aplicación Funcional · <span>Vista: Detalle</span></div>
+
+<div class="page" *ngIf="noticia">
+  <article class="article">
+    <div class="breadcrumb">Inicio / Noticias / <b>Detalle</b></div>
+    <span class="cat" style="background:#1d4ed8;">{{ noticia.categoria }}</span>
+    <h1>{{ noticia.titulo }}</h1>
+    <div class="meta">
+      Autor: <b>{{ noticia.autor }}</b> · Fecha: <b>{{ noticia.fecha }}</b> · Tiempo de lectura: <b>{{ noticia.tiempoLectura }}</b>
+    </div>
+    <div class="hero-img">Imagen representativa de la noticia</div>
+    <p class="body">{{ noticia.cuerpo }}</p>
+
+    <div class="actions">
+      <button class="btn orange big" (click)="toggleFavorito()">{{ esFav ? '★ Quitar de favoritos' : '★ Agregar a favoritos' }}</button>
+      <button class="btn big" style="background:var(--blue);" (click)="irContacto()">Contactar autor</button>
+    </div>
+
+    <p class="note"><b>Interacción:</b> El botón guarda/quita de <b>localStorage</b>. "Contactar autor" redirige al formulario de contacto.</p>
+  </article>
+
+  <section class="section" style="padding-top:10px;" *ngIf="relacionadas.length > 0">
+    <div class="section-head">
+      <div>
+        <span class="kicker">Relacionadas</span>
+        <h2>Quizá también te <span class="accent">interese</span></h2>
+      </div>
+    </div>
+    <div class="cards" style="grid-template-columns:repeat(3,1fr);">
+      <app-news-card *ngFor="let r of relacionadas" [noticia]="r"></app-news-card>
+    </div>
+  </section>
+</div>
+
+<div class="page" *ngIf="!noticia" style="padding:40px;">
+  <p>Noticia no encontrada.</p>
+  <a routerLink="/noticias" class="btn orange">Volver al listado</a>
+</div>

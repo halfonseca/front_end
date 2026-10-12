@@ -1,0 +1,14 @@
+<!-- Tarjeta reutilizable: interpolación {{ }}, property binding [routerLink], event binding (click) -->
+<article class="card">
+  <div class="img-ph">Imagen {{ noticia.id }}</div>
+  <span class="cat">{{ noticia.categoria }}</span>
+  <h3>{{ noticia.titulo }}</h3>
+  <p>{{ noticia.descripcion }}</p>
+  <div class="card-foot">
+    <a [routerLink]="['/noticias', noticia.id]" class="btn orange small">Ver más</a>
+    <button *ngIf="mostrarFavorito" class="btn ghost small" style="margin-left:8px;" (click)="onFavorito()">
+      {{ esFavorito ? '★ Quitar' : '☆ Fav' }}
+    </button>
+    <button *ngIf="mostrarEliminar" class="btn ghost small" style="margin-left:8px;" (click)="onEliminar()">Eliminar</button>
+  </div>
+</article>

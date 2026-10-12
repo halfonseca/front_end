@@ -1,0 +1,122 @@
+[
+  {
+    "id": 1,
+    "titulo": "IA transforma la educación superior",
+    "descripcion": "Las universidades integran IA para personalizar el aprendizaje.",
+    "cuerpo": "La inteligencia artificial está transformando la educación superior al permitir rutas de aprendizaje personalizadas, tutorías automatizadas y análisis predictivos para mejorar la retención estudiantil. Las instituciones adoptan estas tecnologías con enfoque ético y pedagógico, capacitando docentes y garantizando equidad en el acceso.",
+    "categoria": "Educación",
+    "autor": "Redacción NotiRed",
+    "fecha": "15/08/2026",
+    "tiempoLectura": "4 min",
+    "imagen": "img1",
+    "destacada": true
+  },
+  {
+    "id": 2,
+    "titulo": "Avances en computación cuántica",
+    "descripcion": "Nuevos procesadores cuánticos acercan aplicaciones prácticas.",
+    "cuerpo": "Investigadores logran mayor estabilidad en qubits, lo que acerca aplicaciones en criptografía, optimización y simulación molecular. Aunque aún es experimental, el ritmo de avance sugiere hitos relevantes en los próximos años para la industria tecnológica.",
+    "categoria": "Tecnología",
+    "autor": "Redacción NotiRed",
+    "fecha": "16/08/2026",
+    "tiempoLectura": "3 min",
+    "imagen": "img2",
+    "destacada": true
+  },
+  {
+    "id": 3,
+    "titulo": "Turismo sostenible gana impulso",
+    "descripcion": "Destinos priorizan conservación y comunidad local.",
+    "cuerpo": "El turismo sostenible gana impulso con certificaciones, rutas comunitarias y regulación para proteger ecosistemas. Los viajeros valoran experiencias responsables, gastronomía local y menor impacto ambiental en cada destino.",
+    "categoria": "Turismo",
+    "autor": "Lucía Paredes",
+    "fecha": "17/08/2026",
+    "tiempoLectura": "3 min",
+    "imagen": "img3",
+    "destacada": true
+  },
+  {
+    "id": 4,
+    "titulo": "Comercio electrónico en crecimiento",
+    "descripcion": "Las ventas digitales se expanden con nuevas formas de pago.",
+    "cuerpo": "El comercio electrónico crece impulsado por pagos móviles, logística ágil y personalización. Las pymes acceden a mercados globales con menor inversión gracias a plataformas digitales y pasarelas de pago seguras.",
+    "categoria": "Comercio",
+    "autor": "Jorge Salazar",
+    "fecha": "18/08/2026",
+    "tiempoLectura": "2 min",
+    "imagen": "img4",
+    "destacada": true
+  },
+  {
+    "id": 5,
+    "titulo": "Educación híbrida se consolida",
+    "descripcion": "Modelos mixtos combinan presencialidad y virtualidad.",
+    "cuerpo": "La educación híbrida se consolida con aulas flexibles, recursos digitales y evaluación formativa. El enfoque busca equidad, aprendizaje activo y acompañamiento docente tanto en el aula física como en la virtual.",
+    "categoria": "Educación",
+    "autor": "María Álvarez",
+    "fecha": "19/08/2026",
+    "tiempoLectura": "3 min",
+    "imagen": "img5",
+    "destacada": false
+  },
+  {
+    "id": 6,
+    "titulo": "5G impulsa IoT empresarial",
+    "descripcion": "Baja latencia habilita nuevos casos de uso industriales.",
+    "cuerpo": "5G permite conectar sensores, automatizar procesos y monitorear en tiempo real. Sectores como manufactura, salud y transporte adoptan soluciones IoT con mayor eficiencia, reduciendo costos operativos.",
+    "categoria": "Tecnología",
+    "autor": "Redacción NotiRed",
+    "fecha": "20/08/2026",
+    "tiempoLectura": "4 min",
+    "imagen": "img6",
+    "destacada": false
+  },
+  {
+    "id": 7,
+    "titulo": "Ecoturismo en la Amazonía colombiana",
+    "descripcion": "Comunidades lideran rutas de avistamiento y conservación.",
+    "cuerpo": "En la Amazonía colombiana, comunidades indígenas y campesinas lideran iniciativas de ecoturismo: avistamiento de aves, senderismo interpretativo y hospedajes sostenibles que financian la conservación del bosque.",
+    "categoria": "Turismo",
+    "autor": "Lucía Paredes",
+    "fecha": "21/08/2026",
+    "tiempoLectura": "5 min",
+    "imagen": "img7",
+    "destacada": false
+  },
+  {
+    "id": 8,
+    "titulo": "Emprendimiento digital en regiones",
+    "descripcion": "Fondos y mentorías fortalecen negocios fuera de capitales.",
+    "cuerpo": "El emprendimiento digital crece en regiones con apoyo de fondos mixtos, mentorías y conectividad. Negocios de agro, artesanías y servicios venden en línea y generan empleo local con enfoque sostenible.",
+    "categoria": "Comercio",
+    "autor": "Jorge Salazar",
+    "fecha": "22/08/2026",
+    "tiempoLectura": "3 min",
+    "imagen": "img8",
+    "destacada": false
+  },
+  {
+    "id": 9,
+    "titulo": "Becas para formación en programación",
+    "descripcion": "Convocatoria nacional cubre matrícula y certificación.",
+    "cuerpo": "Nueva convocatoria de becas cubre matrícula, mentoría y certificación en programación web. Prioriza jóvenes de estratos 1 a 3 y mujeres en tecnología, con modalidad virtual y acompañamiento laboral.",
+    "categoria": "Educación",
+    "autor": "María Álvarez",
+    "fecha": "23/08/2026",
+    "tiempoLectura": "2 min",
+    "imagen": "img9",
+    "destacada": false
+  },
+  {
+    "id": 10,
+    "titulo": "Ciberseguridad para pymes",
+    "descripcion": "Guía práctica para proteger datos y clientes.",
+    "cuerpo": "Las pymes enfrentan riesgos crecientes de suplantación y ransomware. Esta guía resume controles mínimos: copias de seguridad, doble factor, actualizaciones y capacitación del equipo para proteger datos y clientes.",
+    "categoria": "Tecnología",
+    "autor": "Redacción NotiRed",
+    "fecha": "24/08/2026",
+    "tiempoLectura": "4 min",
+    "imagen": "img10",
+    "destacada": false
+  }
+]

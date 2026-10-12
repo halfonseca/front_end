@@ -1,0 +1,14 @@
+<header class="header">
+  <div class="logo" routerLink="/">
+    <div class="logo-mark">N</div>
+    <div class="logo-name">Noti<em>Red</em></div>
+  </div>
+  <nav class="nav">
+    <a routerLink="/home" routerLinkActive="active">Inicio</a>
+    <a routerLink="/noticias" routerLinkActive="active">Noticias</a>
+    <a routerLink="/favoritos" routerLinkActive="active">Favoritos<span class="badge" *ngIf="favoritosCount > 0">{{ favoritosCount }}</span></a>
+    <a routerLink="/contacto" routerLinkActive="active">Contacto</a>
+    <a routerLink="/acerca" routerLinkActive="active">Acerca de</a>
+    <a routerLink="/contacto" class="btn">Contáctanos</a>
+  </nav>
+</header>

@@ -1,0 +1,110 @@
+<div class="flag">NotiRed · Aplicación Funcional · <span>Vista: Listado</span></div>
+
+<div class="page">
+  <div class="list-layout">
+    <!-- COLUMNA PRINCIPAL -->
+    <div>
+      <div class="breadcrumb">Inicio / Noticias</div>
+      <div class="section-head" style="margin-bottom:14px;">
+        <div>
+          <span class="kicker">Catálogo</span>
+          <h2>Todas las <span class="accent">noticias</span></h2>
+        </div>
+      </div>
+
+      <!-- Búsqueda con two-way binding [(ngModel)] -->
+      <div class="field" style="margin-bottom:14px;">
+        <input type="text" [(ngModel)]="busqueda" (ngModelChange)="alBuscar()" placeholder="Buscar por título o descripción...">
+        <p class="hint">Búsqueda en vivo (two-way binding). Resultados: {{ noticiasFiltradas.length }}</p>
+      </div>
+
+      <!-- Filtros por categoría: event binding (click) + property binding [class] -->
+      <div class="filters">
+        <span class="chip" [class.on]="categoriaActiva === c" *ngFor="let c of categorias" (click)="filtrar(c)">{{ c }}</span>
+      </div>
+
+      <!-- Tarjetas reutilizables con @Input/@Output -->
+      <div class="list-grid">
+        <app-news-card
+          *ngFor="let noticia of noticiasPagina"
+          [noticia]="noticia"
+          [mostrarEliminar]="true"
+          [mostrarFavorito]="true"
+          [esFavorito]="esFav(noticia.id)"
+          (eliminar)="eliminarNoticia($event)"
+          (favorito)="onFavorito($event)">
+        </app-news-card>
+      </div>
+      <p class="hint" *ngIf="noticiasFiltradas.length === 0" style="margin-top:12px;">Sin resultados para esta búsqueda/filtro.</p>
+
+      <!-- Paginación: *ngFor + (click) + [class] -->
+      <div class="pagination">
+        <span class="p" (click)="irPagina(paginaActual - 1)">&lt;</span>
+        <span class="p" [class.on]="paginaActual === p" *ngFor="let p of paginas" (click)="irPagina(p)">{{ p }}</span>
+        <span class="p" (click)="irPagina(paginaActual + 1)">&gt;</span>
+      </div>
+
+      <!-- Mini-CRUD: formulario reactivo -->
+      <div style="margin-top:20px;">
+        <button class="btn orange" (click)="toggleForm()">+ Crear noticia (Admin)</button>
+        <div *ngIf="mostrarForm" style="margin-top:16px; border:1px solid var(--gray-soft); border-radius:var(--radius); padding:16px; background:#fff;">
+          <form [formGroup]="formNoticia" (ngSubmit)="crearNoticia()">
+            <div class="field">
+              <label>Título <span class="req">*</span></label>
+              <input type="text" formControlName="titulo" placeholder="Titular de la noticia">
+              <p class="error" *ngIf="formNoticia.get('titulo')?.invalid && formNoticia.get('titulo')?.touched">Campo obligatorio</p>
+            </div>
+            <div class="field">
+              <label>Descripción breve <span class="req">*</span></label>
+              <input type="text" formControlName="descripcion" placeholder="Resumen de 1-2 líneas">
+              <p class="error" *ngIf="formNoticia.get('descripcion')?.invalid && formNoticia.get('descripcion')?.touched">Campo obligatorio</p>
+            </div>
+            <div class="field">
+              <label>Cuerpo <span class="req">*</span></label>
+              <textarea formControlName="cuerpo" placeholder="Contenido completo"></textarea>
+              <p class="error" *ngIf="formNoticia.get('cuerpo')?.invalid && formNoticia.get('cuerpo')?.touched">Campo obligatorio</p>
+            </div>
+            <div class="field">
+              <label>Categoría <span class="req">*</span></label>
+              <select formControlName="categoria" style="width:100%; padding:10px; border:1px solid var(--gray-soft); border-radius:8px;">
+                <option value="Educación">Educación</option>
+                <option value="Tecnología">Tecnología</option>
+                <option value="Turismo">Turismo</option>
+                <option value="Comercio">Comercio</option>
+              </select>
+            </div>
+            <button type="submit" class="btn orange">Guardar noticia</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- BARRA LATERAL -->
+    <aside class="sidebar">
+      <div>
+        <h4>Favoritos</h4>
+        <ul>
+          <li *ngFor="let f of favoritos">{{ f.titulo }} <b>★</b></li>
+          <li *ngIf="favoritos.length === 0"><span class="hint">Sin favoritos — usa ☆ Fav o el detalle.</span></li>
+        </ul>
+        <p class="hint" style="margin-top:8px;">Persistencia en localStorage (reactivo).</p>
+      </div>
+      <div>
+        <h4>Categorías</h4>
+        <ul>
+          <li>Educación <b>{{ conteo['Educación'] }}</b></li>
+          <li>Tecnología <b>{{ conteo['Tecnología'] }}</b></li>
+          <li>Turismo <b>{{ conteo['Turismo'] }}</b></li>
+          <li>Comercio <b>{{ conteo['Comercio'] }}</b></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Mini-CRUD</h4>
+        <ul>
+          <li>Crear noticia (formulario admin)</li>
+          <li>Eliminar noticia (botón en tarjeta)</li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+</div>

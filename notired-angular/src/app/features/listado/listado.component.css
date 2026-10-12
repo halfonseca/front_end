@@ -1,0 +1,24 @@
+.flag {
+  background: var(--blue-dark);
+  color: #fff;
+  font-size: 12px;
+  letter-spacing: 1px;
+  padding: 6px 0;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+.flag span { color: #fcd34d; }
+
+.list-layout {
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  gap: 30px;
+  padding: 30px 40px;
+}
+
+.list-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 22px;
+}

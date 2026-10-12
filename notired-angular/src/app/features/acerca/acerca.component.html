@@ -1,0 +1,46 @@
+<div class="flag">NotiRed · Aplicación Funcional · <span>Vista: Acerca de</span></div>
+
+<div class="page">
+  <div style="padding:30px 40px; max-width:900px;">
+    <div class="breadcrumb">Inicio / Acerca de</div>
+    <div class="section-head">
+      <div>
+        <span class="kicker">Proyecto</span>
+        <h2>Acerca de <span class="accent">NotiRed</span></h2>
+      </div>
+    </div>
+
+    <p class="body" style="color:#334155; font-size:15px; line-height:1.7; margin-bottom:14px;">
+      <b>NotiRed</b> es una plataforma web de noticias (periódico digital) desarrollada como
+      <b>aplicación funcional completa en Angular</b>. Permite explorar el catálogo, ver el detalle,
+      guardar favoritos con <b>localStorage</b>, contactar con formulario validado y gestionar
+      noticias con un <b>mini-CRUD</b> (crear / eliminar).
+    </p>
+
+    <h3 style="margin:18px 0 8px;">Componentes y binding implementados</h3>
+    <ul style="margin-left:18px; color:#334155; font-size:14px; line-height:1.8;">
+      <li><b>9 componentes:</b> header, footer, home, listado, detalle, favoritos, contacto, acerca + reutilizable <b>news-card</b> (@Input/@Output).</li>
+      <li><b>Interpolación:</b> {{ '{' }}{{ '{' }} noticia.titulo {{ '}' }}{{ '}' }}, contadores y mensajes.</li>
+      <li><b>Property binding:</b> [noticia], [routerLink], [class.on], [formGroup].</li>
+      <li><b>Event binding:</b> (click), (ngSubmit), (favorito), (eliminar).</li>
+      <li><b>Two-way binding:</b> [(ngModel)] en búsqueda y newsletter; formControlName en formularios reactivos.</li>
+      <li><b>Routing:</b> 7 rutas + comodín; detalle con parámetro :id.</li>
+      <li><b>Servicios + HttpClient + RxJS:</b> carga del JSON, BehaviorSubject para el badge de favoritos.</li>
+    </ul>
+
+    <h3 style="margin:18px 0 8px;">Ficha del proyecto</h3>
+    <ul style="margin-left:18px; color:#334155; font-size:14px; line-height:1.8;">
+      <li><b>Autor:</b> Hugo Alexis Fonseca Diaz</li>
+      <li><b>Módulo:</b> Front End — Aplicación funcional completa</li>
+      <li><b>Datos:</b> assets/data/noticias.json (10 noticias) · Persistencia: localStorage</li>
+      <li><b>Ejecución:</b> npm install · ng serve → http://localhost:4200</li>
+    </ul>
+
+    <div class="note"><b>Código organizado y documentado:</b> core/ (modelo + servicio), shared/ (news-card), features/ (vistas); cabeceras y JSDoc en cada archivo.</div>
+
+    <div style="display:flex; gap:12px; margin-top:8px;">
+      <a routerLink="/noticias" class="btn orange">Ver noticias</a>
+      <a routerLink="/contacto" class="btn ghost">Contacto</a>
+    </div>
+  </div>
+</div>

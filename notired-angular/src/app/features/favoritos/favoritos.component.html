@@ -1,0 +1,28 @@
+<div class="flag">NotiRed · Aplicación Funcional · <span>Vista: Favoritos</span></div>
+
+<div class="page">
+  <div style="padding:30px 40px;">
+    <div class="breadcrumb">Inicio / Favoritos</div>
+    <div class="section-head">
+      <div>
+        <span class="kicker">Mi lista ({{ favoritos.length }})</span>
+        <h2>Mis <span class="accent">favoritos</span></h2>
+      </div>
+      <a routerLink="/noticias" class="btn ghost">Ver noticias</a>
+    </div>
+
+    <div class="list-grid" *ngIf="favoritos.length > 0">
+      <app-news-card
+        *ngFor="let f of favoritos"
+        [noticia]="f"
+        [mostrarFavorito]="true"
+        [esFavorito]="true"
+        (favorito)="quitarFavorito($event)">
+      </app-news-card>
+    </div>
+
+    <div *ngIf="favoritos.length === 0" class="note">
+      <b>Sin favoritos:</b> agregue noticias con ☆ Fav en el listado o ★ en el detalle. Se guardan en localStorage.
+    </div>
+  </div>
+</div>

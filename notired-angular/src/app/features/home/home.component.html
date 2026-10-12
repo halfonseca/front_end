@@ -1,0 +1,78 @@
+<div class="flag">NotiRed · Aplicación Funcional · <span>Vista: Home</span></div>
+
+<div class="page">
+  <!-- HERO -->
+  <section class="hero">
+    <div>
+      <h1>Entérate primero.<br>Noticias que importan.</h1>
+      <p>Educación, tecnología, turismo y comercio en un solo lugar. Explora historias reales y quédate con tus favoritas.</p>
+      <div class="ctas">
+        <a routerLink="/noticias" class="btn orange big">Ver noticias</a>
+        <a routerLink="/contacto" class="btn big" style="background:transparent;border:2px solid #fff;">Contáctanos</a>
+      </div>
+    </div>
+    <div class="hero-art">Imagen destacada</div>
+  </section>
+
+  <!-- DESTACADAS con componente reutilizable -->
+  <section class="section">
+    <div class="section-head">
+      <div>
+        <span class="kicker">Lo más leído</span>
+        <h2>Noticias <span class="accent">destacadas</span></h2>
+      </div>
+      <a routerLink="/noticias" class="btn ghost">Ver todas</a>
+    </div>
+
+    <div class="cards">
+      <app-news-card
+        *ngFor="let noticia of destacadas"
+        [noticia]="noticia"
+        [mostrarFavorito]="true"
+        [esFavorito]="esFav(noticia.id)"
+        (favorito)="onFavorito($event)">
+      </app-news-card>
+    </div>
+  </section>
+
+  <!-- CTA + newsletter (two-way binding) -->
+  <div class="cta-band">
+    <div>
+      <h3>¿No encuentras lo que buscas?</h3>
+      <p>Explora el catálogo completo o suscríbete al boletín.</p>
+      <div style="display:flex; gap:8px; margin-top:12px;">
+        <input type="email" [(ngModel)]="newsletterEmail" placeholder="tu@correo.com" style="padding:10px 14px; border:1px solid var(--gray-soft); border-radius:8px; min-width:260px;">
+        <button class="btn" (click)="suscribirse()">Suscribirme</button>
+      </div>
+      <p class="hint" *ngIf="newsletterMsg" style="margin-top:8px;">{{ newsletterMsg }}</p>
+    </div>
+    <a routerLink="/noticias" class="btn big">Explorar</a>
+  </div>
+
+  <!-- TESTIMONIOS -->
+  <section class="section" style="padding-top:0;">
+    <div class="section-head">
+      <div>
+        <span class="kicker">Quiénes nos leen</span>
+        <h2>Testimonios</h2>
+      </div>
+    </div>
+    <div class="testimonials">
+      <div class="testi">
+        <div class="avatar">MA</div>
+        <p>"Encontré todo lo relacionado con mi carrera en un solo periódico digital."</p>
+        <div class="name">María A. · Estudiante</div>
+      </div>
+      <div class="testi">
+        <div class="avatar">JS</div>
+        <p>"Guardo mis noticias favoritas y las reviso cuando quiero. Excelente."</p>
+        <div class="name">Jorge S. · Emprendedor</div>
+      </div>
+      <div class="testi">
+        <div class="avatar">LP</div>
+        <p>"La sección de turismo me ayudó a planear mis viajes. Muy útil."</p>
+        <div class="name">Lucía P. · Viajera</div>
+      </div>
+    </div>
+  </section>
+</div>

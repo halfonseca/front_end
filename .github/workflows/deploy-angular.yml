@@ -1,0 +1,82 @@
+# Despliegue de NotiRed (Angular) en GitHub Pages.
+#
+# Qué hace:
+#  1. Instala Node 20 y las dependencias de notired-angular.
+#  2. Compila con --base-href /front_end/ (requerido en Project Pages).
+#  3. Crea 404.html (copia de index.html) para que el routing de Angular
+#     funcione al recargar /noticias, /detalle, etc.
+#  4. Copia los mockups estáticos a dist/.../mockups/ para consulta.
+#  5. Publica el contenido en GitHub Pages.
+#
+# URL final: https://halfonseca.github.io/front_end/
+
+name: Deploy Angular to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'notired-angular/**'
+      - '.github/workflows/deploy-angular.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: notired-angular
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+          cache-dependency-path: notired-angular/package-lock.json
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build (base-href para Project Pages)
+        run: npx ng build --base-href /front_end/
+
+      - name: SPA fallback + mockups
+        run: |
+          DIST="dist/notired-angular"
+          # Si el builder generara DIST/browser, subir su contenido a DIST.
+          if [ -d "$DIST/browser" ]; then
+            cp -r "$DIST/browser/." "$DIST/"
+            rm -rf "$DIST/browser"
+          fi
+          cp "$DIST/index.html" "$DIST/404.html"
+          touch "$DIST/.nojekyll"
+          mkdir -p "$DIST/mockups"
+          cp ../index.html ../home.html ../listado.html ../detalle.html ../contacto.html ../mockup.css "$DIST/mockups/" 2>/dev/null || true
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: notired-angular/dist/notired-angular
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

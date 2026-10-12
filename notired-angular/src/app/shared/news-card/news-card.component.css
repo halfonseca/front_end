@@ -1,0 +1,2 @@
+/* Los estilos base de .card viven en styles.css; aquí solo ajustes locales. */
+.card-foot .btn { white-space: nowrap; }

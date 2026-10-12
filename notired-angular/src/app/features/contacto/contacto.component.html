@@ -1,0 +1,80 @@
+<div class="flag">NotiRed · Aplicación Funcional · <span>Vista: Contacto</span></div>
+
+<div class="page">
+  <div class="contact-layout">
+    <!-- FORMULARIO -->
+    <div>
+      <div class="breadcrumb">Inicio / Contacto</div>
+      <div class="section-head" style="margin-bottom:14px;">
+        <div>
+          <span class="kicker">Escríbenos</span>
+          <h2>Contacto</h2>
+        </div>
+      </div>
+
+      <form [formGroup]="contactoForm" (ngSubmit)="onSubmit()">
+        <div class="field">
+          <label>Nombre completo <span class="req">*</span></label>
+          <input type="text" formControlName="nombre" placeholder="Ej.: Ana García">
+          <p class="error" *ngIf="contactoForm.get('nombre')?.invalid && contactoForm.get('nombre')?.touched">Nombre obligatorio (mín. 3 caracteres)</p>
+        </div>
+
+        <div class="field">
+          <label>Correo electrónico <span class="req">*</span></label>
+          <input type="email" formControlName="correo" placeholder="Ej.: ana@correo.com">
+          <p class="error" *ngIf="contactoForm.get('correo')?.invalid && contactoForm.get('correo')?.touched">Correo inválido</p>
+        </div>
+
+        <div class="field">
+          <label>Asunto <span class="req">*</span></label>
+          <input type="text" formControlName="asunto" placeholder="Motivo del mensaje">
+          <p class="error" *ngIf="contactoForm.get('asunto')?.invalid && contactoForm.get('asunto')?.touched">Campo obligatorio</p>
+        </div>
+
+        <div class="field">
+          <label>Mensaje <span class="req">*</span></label>
+          <textarea formControlName="mensaje" placeholder="Escribe tu mensaje..."></textarea>
+          <p class="error" *ngIf="contactoForm.get('mensaje')?.invalid && contactoForm.get('mensaje')?.touched">Mensaje obligatorio (mín. 10 caracteres)</p>
+        </div>
+
+        <div class="actions" style="margin-top:0;">
+          <button type="submit" class="btn orange big">Enviar mensaje</button>
+        </div>
+      </form>
+
+      <div *ngIf="enviado" class="note" style="margin-top:14px;">
+        <b>Mensaje enviado:</b> Gracias por contactarnos. Te responderemos pronto.
+      </div>
+
+      <p class="note"><b>Validaciones:</b> Campos obligatorios, formato de correo válido y longitud mínima.</p>
+    </div>
+
+    <!-- INFO CONTACTO -->
+    <aside class="sidebar" style="padding-top:76px;">
+      <div>
+        <h4>Información de contacto</h4>
+        <div class="info-box">
+          <div class="ic">@</div>
+          <div><b>Correo</b><p>hola@notired.com</p></div>
+        </div>
+        <div class="info-box">
+          <div class="ic">☎</div>
+          <div><b>Teléfono</b><p>+57 300 000 0000</p></div>
+        </div>
+        <div class="info-box">
+          <div class="ic">⌂</div>
+          <div><b>Dirección</b><p>Bogotá, Colombia</p></div>
+        </div>
+        <div class="info-box">
+          <div class="ic">◷</div>
+          <div><b>Horario</b><p>Lun–Vie 8:00 a 18:00</p></div>
+        </div>
+      </div>
+
+      <div>
+        <h4>Dónde encontrarnos</h4>
+        <div style="height:140px;border-radius:8px;background:#dbeafe;display:flex;align-items:center;justify-content:center;color:#1d4ed8;font-size:12px;font-weight:700;text-transform:uppercase;">Mapa / ubicación</div>
+      </div>
+    </aside>
+  </div>
+</div>
