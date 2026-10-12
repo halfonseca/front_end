@@ -38,7 +38,7 @@ notired-angular/
 ├── angular.json / package.json / tsconfig.json / README.md
 └── src/
     ├── index.html / main.ts / styles.css / favicon.ico
-    ├── assets/data/noticias.json        # 10 noticias (JSON local)
+    ├── assets/data/noticias.json        # 16 noticias (JSON local)
     └── app/
         ├── app.module.ts                # FormsModule + ReactiveFormsModule + HttpClient
         ├── app-routing.module.ts        # 7 rutas + comodín
@@ -69,7 +69,7 @@ trabaja con las noticias de usuario; con `ng serve` carga las 10 del JSON.
 
 ## 5. Datos y persistencia
 
-- `assets/data/noticias.json`: 10 noticias (4 destacadas, 4 categorías).
+- `assets/data/noticias.json`: 16 noticias (6 destacadas, 5 categorías).
 - `localStorage.notired_favoritos`: arreglo de ids.
 - `localStorage.notired_noticias_custom`: noticias creadas (mini-CRUD).
 

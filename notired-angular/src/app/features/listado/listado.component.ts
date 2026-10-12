@@ -24,7 +24,7 @@ export class ListadoComponent implements OnInit {
   /** Favoritos recientes para la barra lateral. */
   favoritos: Noticia[] = [];
 
-  categorias = ['Todas', 'Educación', 'Tecnología', 'Turismo', 'Comercio'];
+  categorias = ['Todas', 'Educación', 'Tecnología', 'Turismo', 'Comercio', 'Deportes'];
   categoriaActiva = 'Todas';
 
   /** Two-way binding con el input de búsqueda [(ngModel)]. */
@@ -39,7 +39,7 @@ export class ListadoComponent implements OnInit {
   formNoticia: FormGroup;
 
   /** Conteo por categoría para la barra lateral. */
-  conteo: Record<string, number> = { Educación: 0, Tecnología: 0, Turismo: 0, Comercio: 0 };
+  conteo: Record<string, number> = { Educación: 0, Tecnología: 0, Turismo: 0, Comercio: 0, Deportes: 0 };
 
   constructor(private noticiasService: NoticiasService, private fb: FormBuilder) {
     this.formNoticia = this.fb.group({
@@ -116,7 +116,7 @@ export class ListadoComponent implements OnInit {
   }
 
   calcularConteo(): void {
-    this.conteo = { Educación: 0, Tecnología: 0, Turismo: 0, Comercio: 0 };
+    this.conteo = { Educación: 0, Tecnología: 0, Turismo: 0, Comercio: 0, Deportes: 0 };
     this.noticias.forEach((n) => {
       if (this.conteo[n.categoria] !== undefined) this.conteo[n.categoria]++;
     });

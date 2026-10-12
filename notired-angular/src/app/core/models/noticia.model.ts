@@ -10,7 +10,7 @@
  * ========================================================================== */
 
 /** Categorías válidas del catálogo. */
-export type CategoriaNoticia = 'Educación' | 'Tecnología' | 'Turismo' | 'Comercio';
+export type CategoriaNoticia = 'Educación' | 'Tecnología' | 'Turismo' | 'Comercio' | 'Deportes';
 
 /**
  * Representa una noticia del catálogo de NotiRed.

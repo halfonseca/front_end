@@ -27,7 +27,7 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
     this.noticiasService.getDestacadas().subscribe((data) => {
-      this.destacadas = data.slice(0, 4);
+      this.destacadas = data.slice(0, 8);
     });
   }
 

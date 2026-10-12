@@ -118,5 +118,77 @@
     "tiempoLectura": "4 min",
     "imagen": "img10",
     "destacada": false
+  },
+  {
+    "id": 11,
+    "titulo": "Mundial 2026: el torneo que unió a tres países",
+    "descripcion": "Balance del primer Mundial en EE. UU., México y Canadá.",
+    "cuerpo": "El Mundial 2026, primero con 48 selecciones y tres sedes, dejó récords de asistencia y audiencia. La final, disputada en Nueva York, cerró un mes de fútbol que impulsó el turismo, el comercio y la fiebre futbolera en Norteamérica.",
+    "categoria": "Deportes",
+    "autor": "Redacción NotiRed",
+    "fecha": "20/07/2026",
+    "tiempoLectura": "5 min",
+    "imagen": "img11",
+    "destacada": true
+  },
+  {
+    "id": 12,
+    "titulo": "La Tricolor y su campaña en el Mundial 2026",
+    "descripcion": "Colombia ilusionó con una generación de talento joven.",
+    "cuerpo": "La Selección Colombia firmó una destacada campaña en el Mundial 2026 con una base de jugadores jóvenes y un juego ofensivo que ilusionó al país. El análisis táctico, las figuras del torneo y lo que viene para las eliminatorias.",
+    "categoria": "Deportes",
+    "autor": "Jorge Salazar",
+    "fecha": "25/07/2026",
+    "tiempoLectura": "4 min",
+    "imagen": "img12",
+    "destacada": true
+  },
+  {
+    "id": 13,
+    "titulo": "Escarabajos brillan en la temporada ciclística",
+    "descripcion": "Los colombianos protagonizan etapas de montaña en Europa.",
+    "cuerpo": "Los ciclistas colombianos volvieron a ser protagonistas en la montaña: victorias de etapa, top 10 en generales y una nueva camada de jóvenes que mantiene viva la tradición escarabaja en el WorldTour.",
+    "categoria": "Deportes",
+    "autor": "Redacción NotiRed",
+    "fecha": "15/09/2026",
+    "tiempoLectura": "3 min",
+    "imagen": "img13",
+    "destacada": false
+  },
+  {
+    "id": 14,
+    "titulo": "Récord nacional en maratón",
+    "descripcion": "Atleta colombiana clasifica al Mundial de atletismo.",
+    "cuerpo": "Nueva marca nacional en maratón y clasificación al Mundial de atletismo. La fondista, apoyada por su liga regional, dedicó el triunfo al programa de semilleros que la formó desde juvenil.",
+    "categoria": "Deportes",
+    "autor": "María Álvarez",
+    "fecha": "28/09/2026",
+    "tiempoLectura": "3 min",
+    "imagen": "img14",
+    "destacada": false
+  },
+  {
+    "id": 15,
+    "titulo": "El fútbol femenino sigue creciendo",
+    "descripcion": "Récords de asistencia en la liga profesional.",
+    "cuerpo": "La liga profesional femenina cerró su mejor temporada: récords de asistencia, nuevas patrocinadoras y varias jugadoras convocadas a la Selección. Los clubes anuncian mejoras en contratos y divisiones menores.",
+    "categoria": "Deportes",
+    "autor": "Lucía Paredes",
+    "fecha": "05/10/2026",
+    "tiempoLectura": "4 min",
+    "imagen": "img15",
+    "destacada": false
+  },
+  {
+    "id": 16,
+    "titulo": "Patinaje colombiano, potencia mundial",
+    "descripcion": "Oro y plata en el campeonato mundial de velocidad.",
+    "cuerpo": "Colombia reafirmó su dominio en el patinaje de velocidad con oros y platas en el campeonato mundial. La delegación, liderada por figuras experimentadas y juveniles, sumó el medallero más alto del torneo.",
+    "categoria": "Deportes",
+    "autor": "Redacción NotiRed",
+    "fecha": "10/10/2026",
+    "tiempoLectura": "3 min",
+    "imagen": "img16",
+    "destacada": false
   }
 ]
