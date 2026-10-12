@@ -21,7 +21,7 @@
 
         <div class="field">
           <label>Correo electrónico <span class="req">*</span></label>
-          <input type="email" formControlName="correo" placeholder="Ej.: ana@correo.com">
+          <input type="email" formControlName="correo" placeholder="Ej.: ana&#64;correo.com">
           <p class="error" *ngIf="contactoForm.get('correo')?.invalid && contactoForm.get('correo')?.touched">Correo inválido</p>
         </div>
 
@@ -54,8 +54,8 @@
       <div>
         <h4>Información de contacto</h4>
         <div class="info-box">
-          <div class="ic">@</div>
-          <div><b>Correo</b><p>hola@notired.com</p></div>
+          <div class="ic">&#64;</div>
+          <div><b>Correo</b><p>hola&#64;notired.com</p></div>
         </div>
         <div class="info-box">
           <div class="ic">☎</div>

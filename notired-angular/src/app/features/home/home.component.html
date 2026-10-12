@@ -41,7 +41,7 @@
       <h3>¿No encuentras lo que buscas?</h3>
       <p>Explora el catálogo completo o suscríbete al boletín.</p>
       <div style="display:flex; gap:8px; margin-top:12px;">
-        <input type="email" [(ngModel)]="newsletterEmail" placeholder="tu@correo.com" style="padding:10px 14px; border:1px solid var(--gray-soft); border-radius:8px; min-width:260px;">
+        <input type="email" [(ngModel)]="newsletterEmail" placeholder="tu&#64;correo.com" style="padding:10px 14px; border:1px solid var(--gray-soft); border-radius:8px; min-width:260px;">
         <button class="btn" (click)="suscribirse()">Suscribirme</button>
       </div>
       <p class="hint" *ngIf="newsletterMsg" style="margin-top:8px;">{{ newsletterMsg }}</p>
