@@ -7,6 +7,7 @@
  * ========================================================================== */
 
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { NoticiasService } from '../../core/services/noticias.service';
 import { Noticia } from '../../core/models/noticia.model';
@@ -41,7 +42,11 @@ export class ListadoComponent implements OnInit {
   /** Conteo por categoría para la barra lateral. */
   conteo: Record<string, number> = { Educación: 0, Tecnología: 0, Turismo: 0, Comercio: 0, Deportes: 0 };
 
-  constructor(private noticiasService: NoticiasService, private fb: FormBuilder) {
+  constructor(
+    private noticiasService: NoticiasService,
+    private fb: FormBuilder,
+    private route: ActivatedRoute
+  ) {
     this.formNoticia = this.fb.group({
       titulo: ['', Validators.required],
       descripcion: ['', Validators.required],
@@ -54,6 +59,16 @@ export class ListadoComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    // Acepta filtro externo vía query param: /noticias?categoria=Deportes
+    // (enlaces del footer, home, favoritos y detalle).
+    this.route.queryParamMap.subscribe((params) => {
+      const c = params.get('categoria');
+      if (c && this.categorias.includes(c)) {
+        this.categoriaActiva = c;
+        this.paginaActual = 1;
+      }
+      this.aplicarFiltro();
+    });
     this.cargarDatos();
   }
 

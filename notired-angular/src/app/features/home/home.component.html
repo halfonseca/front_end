@@ -1,4 +1,4 @@
-<div class="flag">NotiRed · Aplicación Funcional · <span>Vista: Home</span></div>
+<div class="flag">NotiRed · Entrega final · <span>Vista: Home</span></div>
 
 <div class="page">
   <!-- HERO -->
@@ -34,6 +34,16 @@
       </app-news-card>
     </div>
   </section>
+
+  <!-- BANDA DEPORTIVA: Mundial 2026 y deporte colombiano -->
+  <div class="sports-band">
+    <div>
+      <span class="kicker-light">Mundial 2026 · Deportes</span>
+      <h3>La fiesta del fútbol y el deporte colombiano</h3>
+      <p>Crónicas de la Tricolor, ciclismo, atletismo, fútbol femenino y patinaje.</p>
+    </div>
+    <a [routerLink]="['/noticias']" [queryParams]="{categoria:'Deportes'}" class="btn orange big">Ver deportes</a>
+  </div>
 
   <!-- CTA + newsletter (two-way binding) -->
   <div class="cta-band">

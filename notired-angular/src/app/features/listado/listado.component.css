@@ -22,3 +22,10 @@
   grid-template-columns: repeat(2, 1fr);
   gap: 22px;
 }
+
+/* Enlaces de la barra lateral: categorías, favoritos y accesos del mini-CRUD */
+.sidebar li.link { cursor: pointer; }
+.sidebar li.link:hover { color: var(--blue); }
+.sidebar li.link.destacado { color: var(--blue); font-weight: 700; }
+.sidebar li a { color: var(--ink); text-decoration: none; }
+.sidebar li a:hover { color: var(--blue); text-decoration: underline; }

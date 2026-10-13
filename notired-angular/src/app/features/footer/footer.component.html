@@ -17,11 +17,11 @@
     <div>
       <h4>Categorías</h4>
       <ul>
-        <li>Educación</li>
-        <li>Tecnología</li>
-        <li>Turismo</li>
-        <li>Comercio</li>
-        <li>Deportes</li>
+        <li><a [routerLink]="['/noticias']" [queryParams]="{categoria:'Educación'}">Educación</a></li>
+        <li><a [routerLink]="['/noticias']" [queryParams]="{categoria:'Tecnología'}">Tecnología</a></li>
+        <li><a [routerLink]="['/noticias']" [queryParams]="{categoria:'Turismo'}">Turismo</a></li>
+        <li><a [routerLink]="['/noticias']" [queryParams]="{categoria:'Comercio'}">Comercio</a></li>
+        <li><a [routerLink]="['/noticias']" [queryParams]="{categoria:'Deportes'}">Deportes</a></li>
       </ul>
     </div>
     <div>

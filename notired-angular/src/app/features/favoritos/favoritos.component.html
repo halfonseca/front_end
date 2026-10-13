@@ -1,4 +1,4 @@
-<div class="flag">NotiRed · Aplicación Funcional · <span>Vista: Favoritos</span></div>
+<div class="flag">NotiRed · Entrega final · <span>Vista: Favoritos</span></div>
 
 <div class="page">
   <div style="padding:30px 40px;">
@@ -22,7 +22,7 @@
     </div>
 
     <div *ngIf="favoritos.length === 0" class="note">
-      <b>Sin favoritos:</b> agregue noticias con ☆ Fav en el listado o ★ en el detalle. Se guardan en localStorage.
+      <b>Sin favoritos:</b> agregue noticias con ☆ Fav en el listado o ★ en el detalle. Se guardan en localStorage. Pruebe con las crónicas del <a [routerLink]="['/noticias']" [queryParams]="{categoria:'Deportes'}">Mundial 2026</a>.
     </div>
   </div>
 </div>

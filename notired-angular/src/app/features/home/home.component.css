@@ -70,3 +70,16 @@
 }
 .testi p { font-size: 14px; color: var(--gray); font-style: italic; }
 .testi .name { font-weight: 700; margin-top: 10px; font-size: 13px; }
+
+/* Banda deportiva (Mundial 2026): enlaza al listado filtrado por Deportes */
+.sports-band {
+  background: linear-gradient(135deg, #0f172a, #1e3a8a);
+  color: #fff;
+  margin: 0 40px 10px;
+  border-radius: var(--radius);
+  padding: 30px 40px;
+  display: flex; align-items: center; justify-content: space-between; gap: 24px;
+}
+.sports-band h3 { font-size: 24px; margin: 6px 0; }
+.sports-band p { color: #cbd5e1; }
+.kicker-light { text-transform: uppercase; color: #fcd34d; font-weight: 700; letter-spacing: 1.5px; font-size: 12px; }

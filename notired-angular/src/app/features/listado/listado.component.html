@@ -1,4 +1,4 @@
-<div class="flag">NotiRed · Aplicación Funcional · <span>Vista: Listado</span></div>
+<div class="flag">NotiRed · Entrega final · <span>Vista: Listado</span></div>
 
 <div class="page">
   <div class="list-layout">
@@ -85,7 +85,7 @@
       <div>
         <h4>Favoritos</h4>
         <ul>
-          <li *ngFor="let f of favoritos">{{ f.titulo }} <b>★</b></li>
+          <li *ngFor="let f of favoritos"><a [routerLink]="['/noticias', f.id]">{{ f.titulo }}</a> <b>★</b></li>
           <li *ngIf="favoritos.length === 0"><span class="hint">Sin favoritos — usa ☆ Fav o el detalle.</span></li>
         </ul>
         <p class="hint" style="margin-top:8px;">Persistencia en localStorage (reactivo).</p>
@@ -93,18 +93,18 @@
       <div>
         <h4>Categorías</h4>
         <ul>
-          <li>Educación <b>{{ conteo['Educación'] }}</b></li>
-          <li>Tecnología <b>{{ conteo['Tecnología'] }}</b></li>
-          <li>Turismo <b>{{ conteo['Turismo'] }}</b></li>
-          <li>Comercio <b>{{ conteo['Comercio'] }}</b></li>
-          <li>Deportes <b>{{ conteo['Deportes'] }}</b></li>
+          <li (click)="filtrar('Educación')" class="link">Educación <b>{{ conteo['Educación'] }}</b></li>
+          <li (click)="filtrar('Tecnología')" class="link">Tecnología <b>{{ conteo['Tecnología'] }}</b></li>
+          <li (click)="filtrar('Turismo')" class="link">Turismo <b>{{ conteo['Turismo'] }}</b></li>
+          <li (click)="filtrar('Comercio')" class="link">Comercio <b>{{ conteo['Comercio'] }}</b></li>
+          <li (click)="filtrar('Deportes')" class="link">Deportes <b>{{ conteo['Deportes'] }}</b></li>
         </ul>
       </div>
       <div>
         <h4>Mini-CRUD</h4>
         <ul>
-          <li>Crear noticia (formulario admin)</li>
-          <li>Eliminar noticia (botón en tarjeta)</li>
+          <li (click)="toggleForm()" class="link destacado">+ Crear noticia (formulario admin)</li>
+          <li>Eliminar noticia (botón ☆/Eliminar en tarjeta)</li>
         </ul>
       </div>
     </aside>
